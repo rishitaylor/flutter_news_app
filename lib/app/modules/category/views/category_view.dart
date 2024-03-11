@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_news/app/routes/routes.dart';
 import 'package:flutter_news/app/theme/my_font.dart';
 import 'package:flutter_news/app/utils/assets_const.dart';
 import 'package:flutter_news/app/utils/strings.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class CategoryView extends StatelessWidget {
   const CategoryView({super.key});
@@ -39,30 +41,36 @@ class CategoryView extends StatelessWidget {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Container(
-                          height: 150.h,
-                          decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10.r)),
-                              // color: Colors.red,
-                              image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: AssetImage(
-                                  'assets/cat${index + 1}.png',
-                                ),
-                              )),
-                          child: Align(
-                            alignment: Alignment.bottomLeft,
-                            child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  categoryList[index],
-                                  style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 25,
-                                      fontWeight: FontWeight.w700),
+                      InkWell(
+                        onTap: () {
+                          Get.toNamed(Routes.SUB_CATEGORY);
+                        },
+                        child: Container(
+                            height: 150.h,
+                            decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10.r)),
+                                // color: Colors.red,
+                                image: DecorationImage(
+                                  scale: 1.0,
+                                  fit: BoxFit.cover,
+                                  image: AssetImage(
+                                    'assets/cat${index + 1}.png',
+                                  ),
                                 )),
-                          ))
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    categoryList[index],
+                                    style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 25,
+                                        fontWeight: FontWeight.w700),
+                                  )),
+                            )),
+                      )
                     ],
                   );
                 },

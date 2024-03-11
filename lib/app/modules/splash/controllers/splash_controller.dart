@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class SplashController extends GetxController {
   Future<void> initializeAndRedirect() async {
     Timer(const Duration(seconds: 2), () {});
-    Get.offAllNamed(Routes.HOME);
+    Get.offAll(Routes.BOTTOM_BAR);
   }
 
   @override

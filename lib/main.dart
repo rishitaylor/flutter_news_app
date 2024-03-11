@@ -4,6 +4,7 @@ import 'package:flutter_news/app/modules/splash/views/splash_view.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import 'app/modules/home/views/bottombar_view.dart';
 import 'app/routes/app_routes.dart';
 
 void main() {
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         defaultTransition: Transition.fade,
         initialRoute: AppPages.INITIAL,
         getPages: AppPages.routes,
-        title: "GetXSkeleton",
+        title: "News App",
         useInheritedMediaQuery: true,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const SplashView(),
+        // home: const HomeView(),
       ),
     );
   }

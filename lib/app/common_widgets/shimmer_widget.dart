@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -50,3 +51,15 @@ Widget shimmerHome() {
     },
   );
 }
+
+// Widget shimmerEffect() {
+//   return Animate(
+//     effects: const [BlurEffect(duration: Duration(seconds: 5))],
+//     child: SizedBox(
+//       height: 500.h,
+//     ).animate().shimmer(
+//         color: Colors.red,
+//         duration: const Duration(seconds: 3),
+//         curve: Curves.fastEaseInToSlowEaseOut),
+//   );
+// }
