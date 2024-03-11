@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_news/app/models/homefeed_model.dart';
 import 'package:flutter_news/app/routes/routes.dart';
 import 'package:flutter_news/app/theme/my_font.dart';
 import 'package:flutter_news/app/utils/assets_const.dart';
@@ -10,7 +11,7 @@ import 'package:get/get.dart';
 
 class CategoryView extends StatelessWidget {
   const CategoryView({super.key});
-
+  // final HomefeedModel homeFeed = Get.find<HomefeedModel>();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -43,7 +44,10 @@ class CategoryView extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Get.toNamed(Routes.SUB_CATEGORY);
+                          Get.toNamed(
+                            Routes.SUB_CATEGORY,
+                            arguments: categoryList[index],
+                          );
                         },
                         child: Container(
                             height: 150.h,

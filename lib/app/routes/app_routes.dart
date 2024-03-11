@@ -19,7 +19,7 @@ import 'routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.BOTTOM_BAR;
+  static const INITIAL = Routes.SPLASH;
 
   static final routes = [
     GetPage(
@@ -39,7 +39,7 @@ class AppPages {
     ),
     GetPage(
       name: Routes.CATEGORY,
-      page: () => const CategoryView(),
+      page: () => CategoryView(),
       binding: CategoryBinding(),
     ),
     GetPage(

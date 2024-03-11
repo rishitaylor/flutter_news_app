@@ -36,7 +36,7 @@ class HomeController extends GetxController {
         updateReadMoreList(homefeedModel.articles!.length);
 
         log(homefeedModel.status.toString());
-        log(json.encode(response));
+        // log(json.encode(response));
       } else {
         String storedData =
             LocalStorage().getString(LocalStorage.homeFeed).toString();

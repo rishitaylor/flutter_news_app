@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_news/app/modules/splash/controllers/splash_controller.dart';
+import 'package:flutter_news/app/routes/routes.dart';
 import 'package:flutter_news/app/utils/assets_const.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -9,8 +12,22 @@ import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 import '../../../theme/my_font.dart';
 
-class SplashView extends StatelessWidget {
+class SplashView extends StatefulWidget {
   const SplashView({super.key});
+
+  @override
+  State<SplashView> createState() => _SplashViewState();
+}
+
+class _SplashViewState extends State<SplashView> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    Timer(const Duration(seconds: 3), () {
+      Get.offAllNamed(Routes.BOTTOM_BAR);
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +47,9 @@ class SplashView extends StatelessWidget {
               children: [
                 Text("Flutter", style: MyTheme.myTheme.textTheme.displayLarge),
                 GradientText("News",
-                    style: const TextStyle(
+                    style: TextStyle(
                       letterSpacing: -.5,
-                      fontSize: 38,
+                      fontSize: 38.sp,
                       fontWeight: FontWeight.w600,
                     ),
                     colors: [
@@ -47,7 +64,7 @@ class SplashView extends StatelessWidget {
 
             //description about app
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40),
+              padding: EdgeInsets.symmetric(horizontal: 40.h),
               child: Text(
                 'Introducing Flutter News 📰: Your go-to app for breaking news and in-depth analyses tailored to your interests! Stay informed effortlessly with personalized updates, bookmark articles, and engage with a vibrant community. 💡📱',
                 textAlign: TextAlign.center,
@@ -55,10 +72,10 @@ class SplashView extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 100),
+            SizedBox(height: 100.h),
 
             LoadingAnimationWidget.waveDots(
-                color: MyTheme.myTheme.colorScheme.secondary, size: 40)
+                color: MyTheme.myTheme.colorScheme.secondary, size: 40.h)
           ],
         ),
       ),

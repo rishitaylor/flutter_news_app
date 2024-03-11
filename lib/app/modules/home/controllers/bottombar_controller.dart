@@ -10,7 +10,7 @@ class BottomBarController extends GetxController {
 
   List<Widget> pages = [
     const HomeView(),
-    const CategoryView(),
+    CategoryView(),
     const WorldView(),
     const FavView()
   ];
